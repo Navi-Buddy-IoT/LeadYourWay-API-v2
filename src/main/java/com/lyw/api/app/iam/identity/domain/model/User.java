@@ -35,7 +35,7 @@ public class User implements Serializable {
     @Column(name = "google_photo_url")
     private String googlePhotoUrl;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "role_id")
     private Role role;
 
@@ -46,10 +46,10 @@ public class User implements Serializable {
     @Column(name = "deleted")
     private Boolean deleted;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Bicycle> bicycles;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Card> cards;
 
     @PrePersist

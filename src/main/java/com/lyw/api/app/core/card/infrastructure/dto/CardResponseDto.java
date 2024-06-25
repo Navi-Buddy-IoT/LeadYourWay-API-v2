@@ -1,6 +1,6 @@
 package com.lyw.api.app.core.card.infrastructure.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
@@ -10,18 +10,20 @@ import lombok.Setter;
 @Setter
 @Schema(description = "Card (Response)")
 public class CardResponseDto {
-    @Schema(description = "Card Number")
+    @Schema(description = "cardId")
+    private Long cardId;
+    @Schema(description = "cardNumber")
     private String cardNumber;
-    @Schema(description = "Card Type")
+    @Schema(description = "cardType")
     private String cardType;
-    @Schema(description = "Card CVV")
+    @Schema(description = "cardCvv")
     private String cardCvv;
-    @Schema(description = "Card Expiration Date")
-    private Date cardExpirationDate;
-    @Schema(description = "Card Amount")
+    @Schema(description = "cardExpirationDate")
+    private LocalDate cardExpirationDate;
+    @Schema(description = "cardAmount")
     private Double cardAmount;
-    @Schema(description = "Card Holder")
+    @Schema(description = "cardHolder")
     private String cardHolder;
-    @Schema(description = "Card Main")
+    @Schema(description = "cardMain")
     private boolean cardMain;
 }

@@ -1,5 +1,7 @@
 package com.lyw.api.app.core.rent.application.implementation;
 
+import org.springframework.stereotype.Service;
+
 import com.lyw.api.app.core.card.application.services.CardCommandService;
 import com.lyw.api.app.core.card.domain.commands.UpdateCardAmountCommand;
 import com.lyw.api.app.core.rent.application.services.RentCommandService;
@@ -11,6 +13,7 @@ import com.lyw.api.app.iam.identity.application.services.UserQueryService;
 import com.lyw.api.app.iam.identity.domain.queries.GetUserMainCard;
 import com.lyw.api.app.shared.utils.ValidationUtil;
 
+@Service
 public class RentCommandServiceImpl implements RentCommandService {
 
     private final RentRepository rentRepository;

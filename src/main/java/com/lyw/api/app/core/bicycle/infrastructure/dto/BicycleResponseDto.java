@@ -8,6 +8,8 @@ import lombok.Setter;
 @Setter
 @Schema(description = "Bicycle (Response)")
 public class BicycleResponseDto {
+    @Schema(description = "Bicycle ID")
+    private Long id;
     @Schema(description = "Bicycle Name")
     private String bicycleName;
     @Schema(description = "Bicycle Description")
@@ -20,4 +22,12 @@ public class BicycleResponseDto {
     private String bicycleModel;
     @Schema(description = "Image Data")
     private String imageData;
+    @Schema(description = "Temperature")
+    private double temperature;
+    @Schema(description = "Velocity")
+    private double velocity;
+    @Schema(description = "Latitude")
+    private double latitude;
+    @Schema(description = "Longitude")
+    private double longitude;
 }

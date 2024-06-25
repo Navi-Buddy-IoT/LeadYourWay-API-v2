@@ -1,7 +1,13 @@
 package com.lyw.api.app.shared.utils;
 
+import com.lyw.api.app.assets.domain.model.Velocity;
+import com.lyw.api.app.assets.domain.repositories.VelocityRepository;
 import org.springframework.stereotype.Component;
 
+import com.lyw.api.app.assets.domain.model.Gps;
+import com.lyw.api.app.assets.domain.model.Temperature;
+import com.lyw.api.app.assets.domain.repositories.GpsRepository;
+import com.lyw.api.app.assets.domain.repositories.TemperatureRepository;
 import com.lyw.api.app.core.bicycle.domain.model.Availability;
 import com.lyw.api.app.core.bicycle.domain.model.Bicycle;
 import com.lyw.api.app.core.bicycle.domain.repositories.AvailabilityRepository;
@@ -28,6 +34,9 @@ public class ValidationUtil {
     private final BicycleRepository bicycleRepository;
     private final AvailabilityRepository availabilityRepository;
     private final RentRepository rentRepository;
+    private final TemperatureRepository temperatureRepository;
+    private final VelocityRepository velocityRepository;
+    private final GpsRepository gpsRepository;
 
     public ValidationUtil(
             UserRepository userRepository,
@@ -35,13 +44,19 @@ public class ValidationUtil {
             CardRepository cardRepository,
             BicycleRepository bicycleRepository,
             AvailabilityRepository availabilityRepository,
-            RentRepository rentRepository) {
+            RentRepository rentRepository,
+            TemperatureRepository temperatureRepository, 
+            VelocityRepository velocityRepository,
+            GpsRepository gpsRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.cardRepository = cardRepository;
         this.bicycleRepository = bicycleRepository;
         this.availabilityRepository = availabilityRepository;
         this.rentRepository = rentRepository;
+        this.temperatureRepository = temperatureRepository;
+        this.velocityRepository = velocityRepository;
+        this.gpsRepository = gpsRepository;
     }
 
     public User findUserById(String id) {
@@ -77,6 +92,21 @@ public class ValidationUtil {
     public Rent findRentById(Long id) {
         return rentRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Rent not found with id: " + id));
+    }
+
+    public Temperature findTemperatureById(Long id) {
+        return temperatureRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Temperature not found with id: " + id));
+    }
+
+    public Velocity findVelocityById(Long id){
+        return velocityRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Velocity not found with id: " + id));
+    }
+
+    public Gps findGpsById(Long id){
+        return gpsRepository.findById(id)
+                .orElseThrow(()->new ResourceNotFoundException("Gps not found with id: " + id));
     }
 
 }
