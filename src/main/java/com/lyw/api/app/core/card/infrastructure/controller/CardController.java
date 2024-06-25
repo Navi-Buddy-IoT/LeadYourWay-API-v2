@@ -31,7 +31,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/leadyourway/v1/cards")
 @Tag(name = "Card Controller", description = "Card API")
-@CrossOrigin
 public class CardController {
 
     private final CardCommandService cardCommandService;

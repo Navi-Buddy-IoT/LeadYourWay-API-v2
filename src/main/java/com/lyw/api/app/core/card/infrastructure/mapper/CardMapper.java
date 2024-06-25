@@ -1,5 +1,7 @@
 package com.lyw.api.app.core.card.infrastructure.mapper;
 
+import java.util.List;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -7,11 +9,10 @@ import org.mapstruct.Mappings;
 import com.lyw.api.app.core.card.domain.model.Card;
 import com.lyw.api.app.core.card.infrastructure.dto.CardResponseDto;
 
-import java.util.List;
-
 @Mapper(componentModel = "spring")
 public interface CardMapper {
     @Mappings({
+            @Mapping(target = "cardId", source = "id"),
             @Mapping(target = "cardNumber", source = "cardNumber"),
             @Mapping(target = "cardType", source = "cardType"),
             @Mapping(target = "cardCvv", source = "cardCvv"),

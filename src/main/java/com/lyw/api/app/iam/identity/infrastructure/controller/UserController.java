@@ -27,7 +27,6 @@ import static com.lyw.api.app.shared.constants.ConfigurationMessages.USER_CREATE
 @RestController
 @RequestMapping("/api/leadyourway/v1/users")
 @Tag(name = "User Controller")
-@CrossOrigin
 public class UserController {
     private final UserCommandService userCommandService;
     private final UserQueryService userQueryService;

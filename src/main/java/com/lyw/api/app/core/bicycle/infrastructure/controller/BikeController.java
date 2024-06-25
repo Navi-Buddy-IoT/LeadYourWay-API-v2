@@ -27,7 +27,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/leadyourway/v1/bicycles")
 @Tag(name = "Bicycle Controller", description = "Bicycles API")
-@CrossOrigin
 public class BikeController {
 
     private final BicycleQueryService bicycleQueryService;
@@ -106,7 +105,7 @@ public class BikeController {
     @PutMapping("/velocity/{bicycleId}")
     @Operation(summary = "Update a bicycle velocity")
     public ResponseEntity<String> patchBicycleVelocity(@PathVariable(name = "bicycleId") Long bicycleId,
-            @RequestBody VelocityRequestDto velocityRequestDto){
+            @RequestBody VelocityRequestDto velocityRequestDto) {
         bicycleCommandService.handle(new PatchBicycleVelocityCommand(velocityRequestDto));
         return ResponseEntity.ok("Bicycle velocity updated successfully");
     }
@@ -115,7 +114,7 @@ public class BikeController {
     @PutMapping("/gps/{bicycleId}")
     @Operation(summary = "Update a bicycle gps data")
     public ResponseEntity<String> patchBicycleGps(@PathVariable(name = "bicycleId") Long bicycleId,
-            @RequestBody GpsRequestDto gpsRequestDto){
+            @RequestBody GpsRequestDto gpsRequestDto) {
         bicycleCommandService.handle(new PatchBicycleGpsCommand(gpsRequestDto));
         return ResponseEntity.ok("Bicycle gps updated successfully");
     }
