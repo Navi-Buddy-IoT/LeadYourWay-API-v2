@@ -27,6 +27,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/leadyourway/v1/bicycles")
 @Tag(name = "Bicycle Controller", description = "Bicycles API")
+@CrossOrigin
 public class BikeController {
 
     private final BicycleQueryService bicycleQueryService;

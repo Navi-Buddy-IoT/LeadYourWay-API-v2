@@ -28,6 +28,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/api/leadyourway/v1/rents")
 @Tag(name = "Rent Controller", description = "Rent API")
+@CrossOrigin
 public class RentController {
 
     private final RentCommandService rentCommandService;
