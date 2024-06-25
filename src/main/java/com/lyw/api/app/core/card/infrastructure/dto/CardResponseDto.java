@@ -10,20 +10,20 @@ import lombok.Setter;
 @Setter
 @Schema(description = "Card (Response)")
 public class CardResponseDto {
-    @Schema(description = "Card ID")
+    @Schema(description = "cardId")
     private Long cardId;
-    @Schema(description = "Card Number")
+    @Schema(description = "cardNumber")
     private String cardNumber;
-    @Schema(description = "Card Type")
+    @Schema(description = "cardType")
     private String cardType;
-    @Schema(description = "Card CVV")
+    @Schema(description = "cardCvv")
     private String cardCvv;
-    @Schema(description = "Card Expiration Date")
+    @Schema(description = "cardExpirationDate")
     private LocalDate cardExpirationDate;
-    @Schema(description = "Card Amount")
+    @Schema(description = "cardAmount")
     private Double cardAmount;
-    @Schema(description = "Card Holder")
+    @Schema(description = "cardHolder")
     private String cardHolder;
-    @Schema(description = "Card Main")
+    @Schema(description = "cardMain")
     private boolean cardMain;
 }
